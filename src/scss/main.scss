@@ -120,8 +120,6 @@ h4,
     height: 24px;
   }
 }
-.brand-icon img {
-}
 
 .button,
 a.button {
@@ -442,8 +440,6 @@ a.button {
   transform: translate3d(-100%, 0, 0);
   transition: transform 0.2s ease;
 
-  &__nav {
-  }
   &__nav-list {
     text-align: center;
     list-style: none;
@@ -588,9 +584,6 @@ a.button {
   &__title {
     text-align: center;
     margin-bottom: 35px;
-  }
-
-  &__list {
   }
 
   &__item {
@@ -805,8 +798,6 @@ a.button {
   &__icons {
     margin-bottom: 20px;
   }
-  &__title {
-  }
   &__subtitle {
     margin-top: 20px;
   }
@@ -881,9 +872,6 @@ a.button {
     margin-bottom: 30px;
   }
 
-  &__side {
-  }
-
   &__img {
     height: 100%;
     position: relative;
@@ -909,9 +897,6 @@ a.button {
 
   &__subtitle {
     margin-bottom: 20px;
-  }
-
-  &__text {
   }
 
   &__side-text-1 {

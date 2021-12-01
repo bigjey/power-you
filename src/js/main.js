@@ -127,7 +127,7 @@ window.addEventListener("load", (event) => {
         });
       },
       {
-        threshold: 0.3,
+        threshold: 0.5,
       }
     );
 
@@ -152,201 +152,214 @@ ScrollTrigger.matchMedia({
     );
 
     const promoFeaturesImg1 = document.getElementById("promo-features-img-1");
-    gsap.to("#promo-features-img-1", {
-      y: 1000,
-      x: -80,
-      display: "none",
-      scrollTrigger: {
-        trigger: promoFeaturesImg1,
-        start: "bottom bottom",
-        endTrigger: ".promo-features__content",
-        end: "bottom +=100%",
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
-        onUpdate: function (self) {
-          if (self.progress >= 1) {
-            promoFeaturesImg1.style.display = "none";
-          } else {
-            promoFeaturesImg1.style.display = "block";
-          }
+    if (promoFeaturesImg1) {
+      gsap.to(promoFeaturesImg1, {
+        y: 1000,
+        x: -80,
+        display: "none",
+        scrollTrigger: {
+          trigger: promoFeaturesImg1,
+          start: "bottom bottom",
+          endTrigger: ".promo-features__content",
+          end: "bottom +=100%",
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+          onUpdate: function (self) {
+            if (self.progress >= 1) {
+              promoFeaturesImg1.style.display = "none";
+            } else {
+              promoFeaturesImg1.style.display = "block";
+            }
+          },
         },
-      },
-    });
+      });
+    }
 
     const promoFeatuesImg3 = document.getElementById("promo-features-img-3");
-    gsap.to("#promo-features-img-3", {
-      y: 1000,
-      x: -600,
-      scrollTrigger: {
-        trigger: promoFeatuesImg3,
-        start: "bottom bottom",
-        endTrigger: ".promo-features__content",
-        end: "bottom +=100%",
-        pin: true,
-        pinSpacing: false,
-        scrub: true,
-        onUpdate: function (self) {
-          if (self.progress >= 1) {
-            promoFeatuesImg3.style.display = "none";
-          } else {
-            promoFeatuesImg3.style.display = "block";
-          }
+    if (promoFeatuesImg3) {
+      gsap.to(promoFeatuesImg3, {
+        y: 1000,
+        x: -600,
+        scrollTrigger: {
+          trigger: promoFeatuesImg3,
+          start: "bottom bottom",
+          endTrigger: ".promo-features__content",
+          end: "bottom +=100%",
+          pin: true,
+          pinSpacing: false,
+          scrub: true,
+          onUpdate: function (self) {
+            if (self.progress >= 1) {
+              promoFeatuesImg3.style.display = "none";
+            } else {
+              promoFeatuesImg3.style.display = "block";
+            }
+          },
         },
-      },
-    });
+      });
+    }
 
     const promoFeatuesImg2 = document.getElementById("promo-features-img-2");
-    gsap.to("#promo-features-img-2", {
-      scrollTrigger: {
-        trigger: promoFeatuesImg2,
-        start: "bottom bottom",
-        endTrigger: ".promo-features__content",
-        end: "bottom bottom",
-        pin: true,
-        scrub: true,
-        onUpdate: function (self) {
-          const frame = Math.floor(self.progress * 5);
-          promoFeatuesImg2.style.backgroundPosition = `-${
-            frame * 120
-          }px center`;
+    if (promoFeatuesImg2) {
+      gsap.to("#promo-features-img-2", {
+        scrollTrigger: {
+          trigger: promoFeatuesImg2,
+          start: "bottom bottom",
+          endTrigger: ".promo-features__content",
+          end: "bottom bottom",
+          pin: true,
+          scrub: true,
+          onUpdate: function (self) {
+            const frame = Math.floor(self.progress * 5);
+            promoFeatuesImg2.style.backgroundPosition = `-${
+              frame * 120
+            }px center`;
+          },
         },
-      },
-    });
+      });
+    }
 
     const promoFeatuesImg4 = document.getElementById("promo-features-img-4");
-    gsap.to("#promo-features-img-4", {
-      scrollTrigger: {
-        trigger: promoFeatuesImg4,
-        start: "bottom bottom",
-        endTrigger: ".promo-features__content",
-        end: "bottom bottom",
-        pin: true,
-        scrub: true,
-        onUpdate: function (self) {
-          const frame = Math.floor(self.progress * 5);
-          promoFeatuesImg4.style.backgroundPosition = `-${
-            frame * 120
-          }px center`;
+    if (promoFeatuesImg4) {
+      gsap.to("#promo-features-img-4", {
+        scrollTrigger: {
+          trigger: promoFeatuesImg4,
+          start: "bottom bottom",
+          endTrigger: ".promo-features__content",
+          end: "bottom bottom",
+          pin: true,
+          scrub: true,
+          onUpdate: function (self) {
+            const frame = Math.floor(self.progress * 5);
+            promoFeatuesImg4.style.backgroundPosition = `-${
+              frame * 120
+            }px center`;
+          },
         },
-      },
-    });
+      });
+    }
 
-    const showcaseTimeline = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#product-showcase-frame",
-        start: "top center",
-        endTrigger: "#product-showcase-frame",
-        end: "bottom center",
-        scrub: true,
-      },
-    });
-
-    showcaseTimeline.from("#showcase-1-1", { y: 200, duration: 1 }, 0);
-    showcaseTimeline.to("#showcase-1-1", { y: 200, duration: 1 }, 2);
-
-    showcaseTimeline.from("#showcase-1-2", { opacity: 0, duration: 1 }, 0);
-    showcaseTimeline.to("#showcase-1-2", { opacity: 0, duration: 1 }, 2);
-
-    showcaseTimeline.from("#showcase-1-3", { opacity: 0, duration: 1 }, 0);
-    showcaseTimeline.to("#showcase-1-3", { opacity: 0, duration: 1 }, 2);
-
-    showcaseTimeline.from("#showcase-1-4", { opacity: 0, duration: 1 }, 0);
-    showcaseTimeline.to("#showcase-1-4", { opacity: 0, duration: 1 }, 2);
-
-    showcaseTimeline.from(
-      "#showcase-1-4-1",
-      { y: 700, x: -100, duration: 0.5 },
-      0
+    const productShowcaseFrame = document.getElementById(
+      "product-showcase-frame"
     );
+    if (productShowcaseFrame) {
+      const showcaseTimeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: productShowcaseFrame,
+          start: "top center",
+          endTrigger: productShowcaseFrame,
+          end: "bottom center",
+          scrub: true,
+        },
+      });
 
-    showcaseTimeline.from(
-      "#showcase-1-4-2",
-      { y: 700, x: -100, duration: 0.2 },
-      0 + 0.5
-    );
+      showcaseTimeline.from("#showcase-1-1", { y: 200, duration: 1 }, 0);
+      showcaseTimeline.to("#showcase-1-1", { y: 200, duration: 1 }, 2);
 
-    showcaseTimeline.from(
-      "#showcase-1-4-3",
-      { y: 700, x: -350, duration: 0.5 },
-      0 + 0.3
-    );
+      showcaseTimeline.from("#showcase-1-2", { opacity: 0, duration: 1 }, 0);
+      showcaseTimeline.to("#showcase-1-2", { opacity: 0, duration: 1 }, 2);
 
-    showcaseTimeline.from(
-      "#showcase-1-4-4",
-      { y: 700, x: -350, duration: 0.2 },
-      0 + 0.6
-    );
+      showcaseTimeline.from("#showcase-1-3", { opacity: 0, duration: 1 }, 0);
+      showcaseTimeline.to("#showcase-1-3", { opacity: 0, duration: 1 }, 2);
 
-    showcaseTimeline.to(
-      "#showcase-1-4-1, #showcase-1-4-2",
-      { rotation: -90, y: 400, x: -200, duration: 0.5 },
-      1.9
-    );
+      showcaseTimeline.from("#showcase-1-4", { opacity: 0, duration: 1 }, 0);
+      showcaseTimeline.to("#showcase-1-4", { opacity: 0, duration: 1 }, 2);
 
-    showcaseTimeline.to(
-      "#showcase-1-4-3, #showcase-1-4-4",
-      { rotation: 90, y: 400, x: 200, duration: 0.5 },
-      1.9
-    );
+      showcaseTimeline.from(
+        "#showcase-1-4-1",
+        { y: 700, x: -100, duration: 0.5 },
+        0
+      );
 
-    //
+      showcaseTimeline.from(
+        "#showcase-1-4-2",
+        { y: 700, x: -100, duration: 0.2 },
+        0 + 0.5
+      );
 
-    showcaseTimeline.from("#showcase-2-1", { y: 200, duration: 1 }, 2.5);
+      showcaseTimeline.from(
+        "#showcase-1-4-3",
+        { y: 700, x: -350, duration: 0.5 },
+        0 + 0.3
+      );
 
-    showcaseTimeline.from("#showcase-2-2", { opacity: 0, duration: 1 }, 3);
+      showcaseTimeline.from(
+        "#showcase-1-4-4",
+        { y: 700, x: -350, duration: 0.2 },
+        0 + 0.6
+      );
 
-    showcaseTimeline.from("#showcase-2-3", { opacity: 0, duration: 1 }, 3);
+      showcaseTimeline.to(
+        "#showcase-1-4-1, #showcase-1-4-2",
+        { rotation: -90, y: 400, x: -200, duration: 0.5 },
+        1.9
+      );
 
-    showcaseTimeline.from("#showcase-2-4", { opacity: 0, duration: 1 }, 3);
+      showcaseTimeline.to(
+        "#showcase-1-4-3, #showcase-1-4-4",
+        { rotation: 90, y: 400, x: 200, duration: 0.5 },
+        1.9
+      );
 
-    showcaseTimeline.from(
-      "#showcase-2-4-1",
-      { y: 700, x: -100, duration: 0.5 },
-      3
-    );
+      //
 
-    showcaseTimeline.from(
-      "#showcase-2-4-2",
-      { y: 700, x: -100, duration: 0.2 },
-      3 + 0.5
-    );
+      showcaseTimeline.from("#showcase-2-1", { y: 200, duration: 1 }, 2.5);
 
-    showcaseTimeline.from(
-      "#showcase-2-4-3",
-      { y: 700, x: -350, duration: 0.5 },
-      3 + 0.3
-    );
+      showcaseTimeline.from("#showcase-2-2", { opacity: 0, duration: 1 }, 3);
 
-    showcaseTimeline.from(
-      "#showcase-2-4-4",
-      { y: 700, x: -350, duration: 0.2 },
-      3 + 0.6
-    );
+      showcaseTimeline.from("#showcase-2-3", { opacity: 0, duration: 1 }, 3);
 
-    showcaseTimeline.to(
-      "#showcase-2-4-1, #showcase-2-4-2",
-      { rotation: -90, y: 400, x: -200, duration: 0.5 },
-      4 + 0.9
-    );
+      showcaseTimeline.from("#showcase-2-4", { opacity: 0, duration: 1 }, 3);
 
-    showcaseTimeline.to(
-      "#showcase-2-4-3, #showcase-2-4-4",
-      { rotation: 90, y: 400, x: 200, duration: 0.5 },
-      4 + 0.9
-    );
+      showcaseTimeline.from(
+        "#showcase-2-4-1",
+        { y: 700, x: -100, duration: 0.5 },
+        3
+      );
 
-    gsap.to("#product-showcase-sticky-block", {
-      scrollTrigger: {
-        trigger: "#product-showcase-frame",
-        start: "top top",
-        endTrigger: "#product-showcase-frame",
-        end: "bottom bottom",
-        scrub: true,
-        pin: true,
-        pinSpacing: false,
-      },
-    });
+      showcaseTimeline.from(
+        "#showcase-2-4-2",
+        { y: 700, x: -100, duration: 0.2 },
+        3 + 0.5
+      );
+
+      showcaseTimeline.from(
+        "#showcase-2-4-3",
+        { y: 700, x: -350, duration: 0.5 },
+        3 + 0.3
+      );
+
+      showcaseTimeline.from(
+        "#showcase-2-4-4",
+        { y: 700, x: -350, duration: 0.2 },
+        3 + 0.6
+      );
+
+      showcaseTimeline.to(
+        "#showcase-2-4-1, #showcase-2-4-2",
+        { rotation: -90, y: 400, x: -200, duration: 0.5 },
+        4 + 0.9
+      );
+
+      showcaseTimeline.to(
+        "#showcase-2-4-3, #showcase-2-4-4",
+        { rotation: 90, y: 400, x: 200, duration: 0.5 },
+        4 + 0.9
+      );
+
+      gsap.to("#product-showcase-sticky-block", {
+        scrollTrigger: {
+          trigger: "#product-showcase-frame",
+          start: "top top",
+          endTrigger: "#product-showcase-frame",
+          end: "bottom bottom",
+          scrub: true,
+          pin: true,
+          pinSpacing: false,
+        },
+      });
+    }
 
     const parallaxContainers = document.querySelectorAll(
       ".js-parallax-container"

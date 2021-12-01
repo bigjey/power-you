@@ -108,7 +108,10 @@
             </div>
             <div class="col-md-3 d-none d-md-block">
               <div class="page-header__get-started">
-                <a href="" class="button button--grey"
+                <a
+                  href="javascript:void(0);"
+                  data-open-modal="join-vip-modal"
+                  class="button button--grey"
                   ><span>Get Started</span></a
                 >
               </div>
@@ -124,7 +127,10 @@
           </ul>
         </nav>
         <div class="page-menu__get-started">
-          <a href="" class="button button--secondary"
+          <a
+            href=""
+            data-open-modal="join-vip-modal"
+            class="button button--secondary"
             ><span>Get Started</span></a
           >
         </div>
@@ -314,7 +320,8 @@
                   in der Aktentasche.
                 </div>
                 <div class="testimony__author caption-2 js-reveal-text-2">
-                  Sascha Svoboda | Rechtsanwalt | <span>Wolfgang Hafner</span>
+                  Ernst Schönbichler | Board Member |
+                  <span>E2 Communications GmbH</span>
                 </div>
               </div>
             </div>
@@ -766,18 +773,35 @@
         </div>
       </div>
     </footer>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"
-      integrity="sha512-eP6ippJojIKXKO8EPLtsUMS+/sAGHGo1UN/38swqZa1ypfcD4I0V/ac5G3VzaHfDaklFmQLEs51lhkkVaqg60Q=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"
-      integrity="sha512-CPA5LMoJI/a5HkSIAKcBtFXe4gqGjPUL2ExF/3PmhrrHI17wod9xOqqF+0WZQRKIIq0KwF8oG5BaiWobtrke3A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script src="./js/main.js"></script>
+    <div class="modal-backdrop" id="join-vip-modal">
+      <div class="modal">
+        <div class="modal__close" onclick="closeModal('join-vip-modal')"></div>
+        <div class="modal__content">
+          <div class="join-vip-form">
+            <div class="join-vip-form__title heading-3">JOIN THE VIP LIST</div>
+            <div class="join-vip-form__subtitle caption-3">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
+            </div>
+            <form>
+              <div class="join-vip-form__form">
+                <div class="join-vip-form__form-col">
+                  <input type="text" placeholder="Enter your first name" />
+                </div>
+                <div class="join-vip-form__form-col">
+                  <input type="email" placeholder="Enter your email here" />
+                </div>
+                <div class="join-vip-form__form-col">
+                  <button type="submit" class="button button--primary">
+                    <span>Become a VIP</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./js/main.build.js"></script>
   </body>
 </html>

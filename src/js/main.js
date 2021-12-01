@@ -1,5 +1,9 @@
-// utils and polyfills
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
+
+// utils and polyfills
 if (!Element.prototype.closest) {
   Element.prototype.closest = function (s) {
     var el = this;
@@ -51,6 +55,42 @@ on("#main-menu-toggle", "click", function (e) {
   document.body.classList.toggle("js-show-menu");
 });
 
+// modal
+on("[data-open-modal]", "click", function (e) {
+  e.preventDefault();
+
+  const modalId = this.dataset.openModal;
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    document.body.classList.add("js-show-modal");
+    modal.classList.add("js-show");
+  }
+});
+
+on(".modal-backdrop", "click", function (e) {
+  if (e.target === this) {
+    this.classList.remove("js-show");
+  }
+
+  const openModals = document.querySelectorAll(".modal-backdrop.js-show");
+  if (!openModals.length) {
+    document.body.classList.remove("js-show-modal");
+  }
+});
+
+function closeModal(modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.remove("js-show");
+    const openModals = document.querySelectorAll(".modal-backdrop.js-show");
+    if (!openModals.length) {
+      document.body.classList.remove("js-show-modal");
+    }
+  }
+}
+
+window.closeModal = closeModal;
+
 // features highlight
 var featuresElements = document.querySelectorAll(".promo-features__item");
 var FEATURES_HIGHLIGHT_INTERVAL = 5000;
@@ -87,7 +127,7 @@ window.addEventListener("load", (event) => {
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.3,
       }
     );
 
@@ -98,20 +138,6 @@ window.addEventListener("load", (event) => {
     document.getElementById("preloader").remove();
   }, 2000);
 });
-
-const isLargeScreen = window.matchMedia("(min-width: 992px)");
-
-const promoFeaturesBlock = document.getElementById("promo-features");
-const promoFeaturesSticky = document.getElementById(
-  "promo-features-sticky-img"
-);
-const promoFeaturesImg1 = document.getElementById("promo-features-img-1");
-const promoFeaturesImg2 = document.getElementById("promo-features-img-2");
-const promoFeaturesImg3 = document.getElementById("promo-features-img-3");
-const promoFeaturesImg4 = document.getElementById("promo-features-img-4");
-const stickyBlockHeight = 650;
-
-gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.matchMedia({
   "(min-width: 992px)": function () {
@@ -125,13 +151,13 @@ ScrollTrigger.matchMedia({
       "#product-showcase-sticky-block, #product-showcase-frame"
     );
 
-    const promoFeatuesImg1 = document.getElementById("promo-features-img-1");
+    const promoFeaturesImg1 = document.getElementById("promo-features-img-1");
     gsap.to("#promo-features-img-1", {
       y: 1000,
       x: -80,
       display: "none",
       scrollTrigger: {
-        trigger: promoFeatuesImg1,
+        trigger: promoFeaturesImg1,
         start: "bottom bottom",
         endTrigger: ".promo-features__content",
         end: "bottom +=100%",
@@ -140,9 +166,9 @@ ScrollTrigger.matchMedia({
         scrub: true,
         onUpdate: function (self) {
           if (self.progress >= 1) {
-            promoFeatuesImg1.style.display = "none";
+            promoFeaturesImg1.style.display = "none";
           } else {
-            promoFeatuesImg1.style.display = "block";
+            promoFeaturesImg1.style.display = "block";
           }
         },
       },

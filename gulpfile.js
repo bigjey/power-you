@@ -1,16 +1,17 @@
 const { src, dest, series, parallel } = require("gulp");
 const sass = require("gulp-sass")(require("node-sass"));
 const browserSync = require("browser-sync").create();
-const rimraf = require("gulp-rimraf");
 const rename = require("gulp-rename");
 const replace = require("gulp-replace");
 const watch = require("gulp-watch");
 const autoprefixer = require("gulp-autoprefixer");
 const concat = require("gulp-concat");
 const babel = require("gulp-babel");
+const rimraf = require("rimraf");
+const webpack = require("webpack-stream");
 
-function clean() {
-  return src("./dist/**").pipe(rimraf());
+function clean(done) {
+  rimraf("./dist", done);
 }
 
 function cssDev() {
@@ -31,15 +32,26 @@ function cssBuild() {
 function htmlBuild() {
   return src("./src/*.html")
     .pipe(replace("main.css", "main.min.css"))
-    .pipe(replace("main.js", "main.min.js"))
+    .pipe(replace("main.build.js", "main.min.js"))
     .pipe(dest("./dist/"));
+}
+
+function jsDev() {
+  return src("./src/js/main.js")
+    .pipe(
+      webpack({
+        mode: "development",
+      })
+    )
+    .pipe(rename({ suffix: ".build" }))
+    .pipe(dest("./src/js"));
 }
 
 function jsBuild() {
   return src("./src/js/main.js")
     .pipe(
-      babel({
-        presets: ["@babel/env"],
+      webpack({
+        mode: "production",
       })
     )
     .pipe(rename({ suffix: ".min" }))
@@ -47,7 +59,7 @@ function jsBuild() {
 }
 
 function staticBuild() {
-  return src(["./src/fonts/**", "./src/img/**"]).pipe(dest("./dist/"));
+  return src(["./src/{fonts,img,static}/**/*"]).pipe(dest("./dist/"));
 }
 
 function dev() {
@@ -57,6 +69,7 @@ function dev() {
   });
 
   watch("src/scss/*.scss", cssDev);
+  watch("src/js/main.js", jsDev);
 
   watch("src/*.html", browserSync.reload);
 }

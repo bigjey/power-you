@@ -2086,7 +2086,7 @@ a.button {
     padding: 36px 0 110px;
     min-height: calc(100vh - 120px); }
     .page-hero__slogan {
-      max-width: 60%;
+      max-width: 800px;
       padding: 10px 0; }
     .page-hero__img-main img {
       max-height: 800px;
@@ -2166,7 +2166,7 @@ a.button {
   .page-header__nav-toggle {
     text-align: right;
     position: absolute;
-    top: 0;
+    top: 1px;
     right: 14px; }
     .page-header__nav-toggle a {
       display: inline-block;
@@ -2193,6 +2193,13 @@ a.button {
     padding: 0 40px; }
   .page-header__get-started {
     text-align: right; }
+  .page-header__side {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 50px; }
+  .page-header__lang {
+    margin-left: 15px; }
 
 .js-show-menu .page-header__nav-toggle {
   position: fixed;
@@ -2211,7 +2218,9 @@ a.button {
     min-height: 120px; }
     .page-header__logo img {
       display: block;
-      height: auto; } }
+      height: auto; }
+    .page-header__lang {
+      margin-left: 40px; } }
 
 .page-footer {
   padding: 14px 0; }

@@ -377,7 +377,7 @@ a.button {
     min-height: calc(100vh - 120px);
 
     &__slogan {
-      max-width: 60%;
+      max-width: 800px;
       padding: 10px 0;
     }
 
@@ -494,7 +494,7 @@ a.button {
   &__nav-toggle {
     text-align: right;
     position: absolute;
-    top: 0;
+    top: 1px;
     right: 14px;
 
     a {
@@ -533,6 +533,17 @@ a.button {
   &__get-started {
     text-align: right;
   }
+
+  &__side {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 50px;
+  }
+
+  &__lang {
+    margin-left: 15px;
+  }
 }
 
 .js-show-menu {
@@ -564,6 +575,10 @@ a.button {
         display: block;
         height: auto;
       }
+    }
+
+    &__lang {
+      margin-left: 40px;
     }
   }
 }

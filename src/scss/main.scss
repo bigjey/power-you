@@ -536,7 +536,7 @@ a.button {
 
   &__side {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: center;
     padding-right: 50px;
   }

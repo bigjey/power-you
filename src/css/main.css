@@ -1798,7 +1798,13 @@ svg path {
 .color--brand-primary {
   color: #e30517; }
 
-.bg--gray {
+.bg--gray-1 {
+  background: #d7d7d7; }
+
+.bg--gray-2 {
+  background: #f5f5f5; }
+
+.bg--gray-3 {
   background: #f9f9f9; }
 
 h1,
@@ -1971,7 +1977,9 @@ a.button {
 .page-hero-container {
   position: relative;
   overflow: hidden;
-  background: url("../img/logo-bg.png") no-repeat top -10vh right -10vw; }
+  background-image: url("../img/logo-bg.png");
+  background-repeat: no-repeat;
+  background-position: top -10vh right -10vw; }
 
 .page-preloader {
   position: fixed;
@@ -2060,7 +2068,8 @@ a.button {
     pointer-events: none; }
     .page-hero__img-main img {
       display: block;
-      max-width: 50%; }
+      max-width: 50%;
+      margin: auto; }
   .page-hero__img-snack {
     pointer-events: none;
     position: absolute;
@@ -2134,8 +2143,6 @@ a.button {
       right: -150px;
       top: 50%;
       width: auto; }
-    .page-hero__img-static {
-      padding-left: 50px; }
     .page-hero__img-snack-2 {
       position: absolute;
       top: 50%;
@@ -2599,7 +2606,11 @@ a.button {
     background: #fff;
     transition: transform 1.5s ease;
     transform: translateX(0%); }
-    .bg--gray .js-reveal-img-side:after {
+    .bg--gray-1 .js-reveal-img-side:after {
+      background: #d7d7d7; }
+    .bg--gray-2 .js-reveal-img-side:after {
+      background: #f5f5f5; }
+    .bg--gray-3 .js-reveal-img-side:after {
       background: #f9f9f9; }
 
 .js-reveal-img-top {
@@ -2622,7 +2633,11 @@ a.button {
     background: #fff;
     transition: transform 1.5s ease;
     transform: translateY(0%); }
-    .bg--gray .js-reveal-img-top:after {
+    .bg--gray-1 .js-reveal-img-top:after {
+      background: #d7d7d7; }
+    .bg--gray-2 .js-reveal-img-top:after {
+      background: #f5f5f5; }
+    .bg--gray-3 .js-reveal-img-top:after {
       background: #f9f9f9; }
 
 .js-show .js-reveal-img-side {

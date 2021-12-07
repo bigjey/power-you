@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('./inc/head.html')
+  <body>
+    @@include('./inc/preloader.html')
+    <div class="page-hero-container">
+      @@include('./inc/header.html', { heroGray: false, showNav: true })
+    </div>
+    <main class="page-content">
+      <section class="page-section">
+        <h1>Empty template</h1>
+        <br />
+        <div class="container-fluid content-wrapper">
+          <div>Wide container</div>
+          <br />
+          <br />
+          <h1>Header 1</h1>
+          <br />
+          <h2>Header 2</h2>
+          <br />
+          <h3>Header 3</h3>
+          <br />
+          <h4>Header 4</h4>
+        </div>
+        <br />
+        <div class="container">
+          <div>Narrow container</div>
+          <br />
+          <div class="caption-1">Caption 1</div>
+          <br />
+          <div class="caption-2">Caption 2</div>
+          <br />
+          <div class="caption-3">Caption 3</div>
+          <br />
+          <div>
+            <button class="button button--primary">
+              <span>Primary button</span>
+            </button>
+          </div>
+          <br />
+          <div>
+            <button class="button button--secondary">
+              <span>Primary button</span>
+            </button>
+          </div>
+          <br />
+          <div>
+            <button class="button button--grey">
+              <span>Primary button</span>
+            </button>
+          </div>
+          <br />
+          <a href="#" data-open-modal="join-vip-modal">Open Modal</a>
+        </div>
+      </section>
+    </main>
+
+    @@include('./inc/footer.html') @@include('./inc/modal.html')
+    @@include('./inc/scripts.html')
+  </body>
+</html>

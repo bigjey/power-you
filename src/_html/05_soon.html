@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  @@include('./inc/head.html')
+  <body class="hero--gray-bg">
+    @@include('./inc/preloader.html')
+    <div class="page-hero-container bg--gray">
+      @@include('./inc/header.html', { "heroGray": false, "showNav": false })
+      <div class="page-hero">
+        <div class="container-fluid content-wrapper">
+          <div class="page-hero__slogan">
+            <h1>Hoppala, was ist jetzt passiert?</h1>
+          </div>
+
+          <div class="page-hero__img-snack-2">
+            <img src="./img/img2.png" alt="" />
+          </div>
+          <div class="page-hero__img-main">
+            <img src="./img/guy_2.png" alt="" />
+          </div>
+          <div class="page-hero__text caption-1">
+            Wir geben dir die POWER den Weg wieder zu finden.
+          </div>
+          <div class="page-hero__cta">
+            <a href="" class="button button--primary"
+              ><span>Der richtige Weg</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    @@include('./inc/scripts.html')
+  </body>
+</html>

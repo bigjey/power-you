@@ -5,10 +5,9 @@ const rename = require("gulp-rename");
 const replace = require("gulp-replace");
 const watch = require("gulp-watch");
 const autoprefixer = require("gulp-autoprefixer");
-const concat = require("gulp-concat");
-const babel = require("gulp-babel");
 const rimraf = require("rimraf");
 const webpack = require("webpack-stream");
+const fileinclude = require("gulp-file-include");
 
 function clean(done) {
   rimraf("./dist", done);
@@ -27,6 +26,17 @@ function cssBuild() {
     .pipe(sass({ outputStyle: "compressed" }))
     .pipe(rename({ suffix: ".min" }))
     .pipe(dest("./dist/css"));
+}
+
+function htmlDev() {
+  return src("./src/_html/*.html")
+    .pipe(
+      fileinclude({
+        prefix: "@@",
+        basepath: "@file",
+      })
+    )
+    .pipe(dest("./src/"));
 }
 
 function htmlBuild() {
@@ -64,14 +74,18 @@ function staticBuild() {
 
 function dev() {
   browserSync.init({
-    server: "./src",
+    server: {
+      baseDir: "./src",
+      directory: true,
+    },
+    files: "*.html",
     injectChanges: true,
   });
 
   watch("src/scss/*.scss", cssDev);
   watch("src/js/main.js", jsDev);
 
-  watch("src/*.html", browserSync.reload);
+  watch("src/_html/**/*.html", series(htmlDev, browserSync.reload));
 }
 
 const build = series(

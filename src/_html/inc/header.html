@@ -1,0 +1,76 @@
+<header class="page-header">
+  <div class="container-fluid content-wrapper">
+    <div class="row">
+      <div class="col-9 col-lg-3">
+        <div class="page-header__logo">
+          <a href="">
+            <img src="./img/logo.svg" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="col-3 d-lg-none">
+        <div class="page-header__side">
+          <div class="page-header__lang">
+            <a href="">De</a>
+          </div>
+          @@if (showNav == true) {
+          <div class="page-header__nav-toggle">
+            <a href="" id="main-menu-toggle"><span></span></a>
+          </div>
+          }
+        </div>
+      </div>
+      <div class="col d-none d-lg-block">
+        @@if (showNav == true) {
+        <nav class="page-header__nav">
+          <ul class="page-header__nav-list">
+            <li class="page-header__nav-item"><a href="">Über uns</a></li>
+            <li class="page-header__nav-item"><a href="">Kontakt</a></li>
+          </ul>
+        </nav>
+        }
+      </div>
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="page-header__side">
+          @@if (showNav == true) {
+          <div class="page-header__get-started">
+            @@if (heroGray == true) {
+            <a
+              href="javascript:void(0);"
+              data-open-modal="join-vip-modal"
+              class="button button--grey"
+              ><span>Get Started</span></a
+            >
+            } @@if (heroGray != true) {
+            <a
+              href="javascript:void(0);"
+              data-open-modal="join-vip-modal"
+              class="button button--secondary"
+              ><span>Get Started</span></a
+            >
+            }
+          </div>
+          }
+          <div class="page-header__lang">
+            <a href="">De</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="page-menu d-lg-none" id="main-menu">
+  @@if (showNav == true) {
+  <nav class="page-menu__nav">
+    <ul class="page-menu__nav-list">
+      <li class="page-menu__nav-item"><a href="">Über uns</a></li>
+      <li class="page-menu__nav-item"><a href="">Kontakt</a></li>
+    </ul>
+  </nav>
+  <div class="page-menu__get-started">
+    <a href="" data-open-modal="join-vip-modal" class="button button--secondary"
+      ><span>Get Started</span></a
+    >
+  </div>
+  }
+</div>

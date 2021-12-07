@@ -369,7 +369,7 @@ ScrollTrigger.matchMedia({
       const text = container.querySelector(".js-parallax-text");
       if (text) {
         gsap.from(text, {
-          yPercent: 50,
+          yPercent: 40,
           scrollTrigger: {
             trigger: container,
             scrub: true,
@@ -379,8 +379,7 @@ ScrollTrigger.matchMedia({
       const img = container.querySelectorAll(".js-parallax-img");
       if (img) {
         gsap.from(img, {
-          backgroundPosition: "50% -80px",
-          yPercent: -10,
+          backgroundPosition: "50% -150px",
           scrollTrigger: {
             trigger: container,
             scrub: true,

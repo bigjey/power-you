@@ -1817,7 +1817,7 @@ h1,
     .heading-1 {
       font-size: 60px;
       line-height: 1.1; } }
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     h1,
     .heading-1 {
       font-size: 72px;
@@ -1836,7 +1836,7 @@ h2,
   font-size: 48px;
   line-height: 1.1;
   font-weight: bold; }
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     h2,
     .heading-2 {
       font-size: 64px;
@@ -1847,7 +1847,7 @@ h3,
   font-size: 24px;
   line-height: 1.1;
   font-weight: bold; }
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     h3,
     .heading-3 {
       font-size: 36px;
@@ -1857,7 +1857,7 @@ h4,
 .heading-4 {
   font-size: 18px;
   line-height: 1.3; }
-  @media (min-width: 1400px) {
+  @media (min-width: 1360px) {
     h4,
     .heading-4 {
       font-size: 24px;
@@ -2043,7 +2043,8 @@ a.button {
   .page-hero__slogan {
     word-break: break-word;
     margin-bottom: 30px;
-    text-indent: 40px; }
+    text-indent: 40px;
+    max-width: 600px; }
     .page-hero__slogan span {
       color: #e30517; }
   .page-hero__text {
@@ -2068,8 +2069,8 @@ a.button {
     pointer-events: none; }
     .page-hero__img-main img {
       display: block;
-      max-width: 50%;
-      margin: auto; }
+      max-width: 300px;
+      max-height: 300px; }
   .page-hero__img-snack {
     pointer-events: none;
     position: absolute;
@@ -2111,7 +2112,7 @@ a.button {
     .page-hero__img-snack {
       top: auto;
       right: -150px;
-      top: 30%;
+      top: 40%;
       width: 50%; }
       .page-hero__img-snack img {
         transform: translate(100%, -50%);
@@ -2131,18 +2132,19 @@ a.button {
     min-height: calc(100vh - 120px); }
     .page-hero__slogan {
       max-width: 100%;
-      width: 800px;
+      width: 600px;
       padding: 10px 0; }
     .page-hero__img-main img {
-      max-height: 800px;
+      max-height: 650px;
       height: 100%;
       position: absolute;
-      left: 65%; }
+      left: 68%; }
     .page-hero__img-snack {
       top: auto;
       right: -150px;
       top: 50%;
-      width: auto; }
+      width: auto;
+      width: 400px; }
     .page-hero__img-snack-2 {
       position: absolute;
       top: 50%;
@@ -2151,21 +2153,38 @@ a.button {
       right: 50px;
       width: 300px; } }
 
-@media (min-width: 1400px) {
+@media (min-width: 1360px) {
   .page-hero {
     display: flex;
     align-items: center; }
+    .page-hero__slogan {
+      width: 800px; }
     .page-hero__img-main img {
-      max-height: 900px; }
+      max-height: 1000px;
+      left: 65%; }
     .page-hero__img-snack {
-      width: 500px;
-      top: 50%; }
+      width: 450px;
+      top: 40%; }
       .page-hero__img-snack img {
         width: 100%; }
     .page-hero__featured {
       position: absolute;
-      bottom: 50px;
-      right: 50px; } }
+      bottom: 20px;
+      right: 20px; } }
+
+@media (min-width: 1600px) {
+  .page-hero__img-main img {
+    max-height: 1000px;
+    left: 57%; }
+  .page-hero__img-snack {
+    width: 500px;
+    top: 40%; }
+    .page-hero__img-snack img {
+      width: 100%; }
+  .page-hero__featured {
+    position: absolute;
+    bottom: 100px;
+    right: 100px; } }
 
 .page-menu {
   position: fixed;
@@ -2397,7 +2416,7 @@ a.button {
       font-size: 48px;
       line-height: 1.1;
       font-weight: bold; }
-      @media (min-width: 1400px) {
+      @media (min-width: 1360px) {
         .testimony__title:before {
           font-size: 64px;
           line-height: 1.1; } }
@@ -2594,7 +2613,9 @@ a.button {
   transition: opacity 1.5s ease;
   background-repeat: no-repeat;
   background-position: 50% 0;
-  background-size: cover; }
+  background-size: contain; }
+  .js-reveal-img-side img {
+    max-width: 100%; }
   .js-reveal-img-side:after {
     content: "";
     display: block;
@@ -2621,7 +2642,9 @@ a.button {
   transition: opacity 1.5s ease;
   background-repeat: no-repeat;
   background-position: 50% 0;
-  background-size: cover; }
+  background-size: contain; }
+  .js-reveal-img-top img {
+    max-width: 100%; }
   .js-reveal-img-top:after {
     content: "";
     display: block;

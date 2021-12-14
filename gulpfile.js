@@ -69,7 +69,10 @@ function jsBuild() {
 }
 
 function staticBuild() {
-  return src(["./src/{fonts,img,static}/**/*"]).pipe(dest("./dist/"));
+  return src([
+    "./src/{fonts,img,static}/**/*",
+    "./src/manifest.webmanifest",
+  ]).pipe(dest("./dist/"));
 }
 
 function dev() {

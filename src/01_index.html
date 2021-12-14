@@ -5,6 +5,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Power You</title>
+  <!-- favicon -->
+  <link rel="icon" href="./img/icon.ico" sizes="any" />
+  <link rel="icon" href="./img/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./img/apple-touch-icon.png" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <!-- styles -->
   <link rel="preload" href="./css/main.css" as="style" />
   <link rel="stylesheet" href="./css/main.css" />
 </head>
@@ -271,10 +277,22 @@
 
       <section class="page-section js-reveal-scroll">
         <div class="container-fluid content-wrapper">
-          <picture class="js-reveal-img-top">
-            <source srcset="./static/img3.jpg" media="(min-width: 760px)" />
-            <img src="./static/img7.jpg" alt="" width="100%" height="auto" />
-          </picture>
+          <div class="d-lg-none">
+            <div
+              class="js-reveal-img-side"
+              style="background-image: url('./static/img7.jpg')"
+            >
+              <img src="./static/img7.jpg" style="visibility: hidden" alt="" />
+            </div>
+          </div>
+          <div class="d-none d-lg-block">
+            <div
+              class="js-reveal-img-top"
+              style="background-image: url('./static/img3.jpg')"
+            >
+              <img src="./static/img3.jpg" style="visibility: hidden" alt="" />
+            </div>
+          </div>
         </div>
       </section>
 

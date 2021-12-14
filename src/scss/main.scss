@@ -312,6 +312,7 @@ a.button {
     word-break: break-word;
     margin-bottom: 30px;
     text-indent: 40px;
+    max-width: 600px;
 
     span {
       color: $color-brand-primary;
@@ -347,8 +348,8 @@ a.button {
 
     img {
       display: block;
-      max-width: 50%;
-      margin: auto;
+      max-width: 300px;
+      max-height: 300px;
     }
   }
   &__img-snack {
@@ -409,7 +410,7 @@ a.button {
     &__img-snack {
       top: auto;
       right: -150px;
-      top: 30%;
+      top: 40%;
       width: 50%;
 
       img {
@@ -439,16 +440,16 @@ a.button {
 
     &__slogan {
       max-width: 100%;
-      width: 800px;
+      width: 600px;
       padding: 10px 0;
     }
 
     &__img-main {
       img {
-        max-height: 800px;
+        max-height: 650px;
         height: 100%;
         position: absolute;
-        left: 65%;
+        left: 68%;
       }
     }
 
@@ -457,6 +458,7 @@ a.button {
       right: -150px;
       top: 50%;
       width: auto;
+      width: 400px;
     }
 
     &__img-static {
@@ -477,14 +479,18 @@ a.button {
   .page-hero {
     display: flex;
     align-items: center;
+    &__slogan {
+      width: 800px;
+    }
     &__img-main {
       img {
-        max-height: 900px;
+        max-height: 1000px;
+        left: 65%;
       }
     }
     &__img-snack {
-      width: 500px;
-      top: 50%;
+      width: 450px;
+      top: 40%;
 
       img {
         width: 100%;
@@ -493,8 +499,33 @@ a.button {
 
     &__featured {
       position: absolute;
-      bottom: 50px;
-      right: 50px;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+}
+
+@media (min-width: 1600px) {
+  .page-hero {
+    &__img-main {
+      img {
+        max-height: 1000px;
+        left: 57%;
+      }
+    }
+    &__img-snack {
+      width: 500px;
+      top: 40%;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &__featured {
+      position: absolute;
+      bottom: 100px;
+      right: 100px;
     }
   }
 }
@@ -1138,7 +1169,11 @@ a.button {
   transition: opacity 1.5s ease;
   background-repeat: no-repeat;
   background-position: 50% 0;
-  background-size: cover;
+  background-size: contain;
+
+  img {
+    max-width: 100%;
+  }
 
   &:after {
     content: "";
@@ -1173,7 +1208,11 @@ a.button {
   transition: opacity 1.5s ease;
   background-repeat: no-repeat;
   background-position: 50% 0;
-  background-size: cover;
+  background-size: contain;
+
+  img {
+    max-width: 100%;
+  }
 
   &:after {
     content: "";

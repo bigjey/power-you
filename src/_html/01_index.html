@@ -122,10 +122,22 @@
 
       <section class="page-section js-reveal-scroll">
         <div class="container-fluid content-wrapper">
-          <picture class="js-reveal-img-top">
-            <source srcset="./static/img3.jpg" media="(min-width: 760px)" />
-            <img src="./static/img7.jpg" alt="" width="100%" height="auto" />
-          </picture>
+          <div class="d-lg-none">
+            <div
+              class="js-reveal-img-side"
+              style="background-image: url('./static/img7.jpg')"
+            >
+              <img src="./static/img7.jpg" style="visibility: hidden" alt="" />
+            </div>
+          </div>
+          <div class="d-none d-lg-block">
+            <div
+              class="js-reveal-img-top"
+              style="background-image: url('./static/img3.jpg')"
+            >
+              <img src="./static/img3.jpg" style="visibility: hidden" alt="" />
+            </div>
+          </div>
         </div>
       </section>
 

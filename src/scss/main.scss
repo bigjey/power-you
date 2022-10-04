@@ -269,17 +269,11 @@ a.button {
     top: 0;
     transition: none;
   }
-  .page-hero__featured {
-    margin-right: 0;
-  }
-  .page-hero__cta {
-    margin-left: 0;
-  }
 }
 
 @media (min-width: $breakpoint-md) {
   .js-loaded {
-    .page-hero__img-main img {
+    .page-hero__img-main {
       transform: translate(-50%, 0);
     }
     .page-hero__img-snack img {
@@ -291,7 +285,7 @@ a.button {
     .page-hero__slogan {
       animation: text-clip 1s 0.3s cubic-bezier(0.5, 0, 0.1, 1) both;
     }
-    .page-hero__featured {
+    .page-hero__cta-wrapper {
       animation: text-clip 1s 0.3s cubic-bezier(0.5, 0, 0.1, 1) both;
     }
     .page-hero__text {
@@ -308,7 +302,15 @@ a.button {
     height: 100%;
   }
 
+  &__cta-wrapper{
+    margin: 30px 0 0 0;
+    display: flex;
+    flex-direction: column;
+  }
+
   &__slogan {
+    position: relative;
+    z-index: 2;
     word-break: break-word;
     margin-bottom: 30px;
     text-indent: 40px;
@@ -327,29 +329,40 @@ a.button {
     }
   }
   &__cta {
-    margin-top: 30px;
+    display: inline-block;
     position: relative;
     transition: 1s margin-left cubic-bezier(0.34, 1.56, 0.64, 1);
     transition-delay: 0.3s;
+    margin-top: 30px;
+    order: 2;
   }
   &__featured {
-    margin-top: 20px;
     position: relative;
-    margin-right: -500px;
     transition: 1s margin-right cubic-bezier(0.34, 1.56, 0.64, 1);
     transition-delay: 0.3s;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    height: 24px;
 
     img {
-      vertical-align: middle;
+      //vertical-align: middle;
+      max-height: 17px;
+      width: auto;
+      margin-left: 5px;
     }
   }
   &__img-main {
     pointer-events: none;
-
+    display: block;
+    width: 100%;
+    max-height: 100%;
+    padding: 0 100px 0 0;
+    margin: 50px 0;
     img {
-      display: block;
-      max-width: 300px;
-      max-height: 300px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
   &__img-snack {
@@ -386,21 +399,42 @@ a.button {
   }
 }
 
+@media(min-width: 476px){
+  .page-hero{
+    &__img-main{
+      padding: 0 150px 0 0;
+    }
+  }
+}
+
 @media (min-width: $breakpoint-md) {
   .page-hero {
     min-height: calc(100vh - 60px);
     &__img-main {
-      img {
-        max-height: 600px;
-        max-width: none;
-        height: 100%;
-        position: absolute;
-        bottom: -50px;
-        left: 50%;
-        transform: translate(-50%, 100%);
-        transition: 1s transform cubic-bezier(0.34, 1.3, 0.64, 1);
-        transition-delay: 0.3s;
-      }
+      max-height: 800px;
+      max-width: none;
+      height: 100%;
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      transform: translate(-50%, 100%);
+      transition: 1s transform cubic-bezier(0.34, 1.3, 0.64, 1);
+      transition-delay: 0.3s;
+      opacity: .8;
+    }
+
+    &__cta-wrapper{
+      flex-direction: initial;
+    }
+
+    &__featured{
+      align-self: flex-end;
+    }
+
+    &__cta{
+      order: initial;
+      margin-top: initial;
+      margin-right: 30px;
     }
 
     &__slogan {
@@ -408,7 +442,6 @@ a.button {
     }
 
     &__img-snack {
-      top: auto;
       right: -150px;
       top: 40%;
       width: 50%;
@@ -418,10 +451,6 @@ a.button {
         transition: 0.5s transform ease;
         transition-delay: 1.3s;
       }
-    }
-
-    &__cta {
-      margin-left: -500px;
     }
 
     &__img-snack-2 {
@@ -445,19 +474,17 @@ a.button {
     }
 
     &__img-main {
-      img {
-        max-height: 650px;
-        height: 100%;
-        position: absolute;
-        left: 68%;
-      }
+      max-height: 800px;
+      height: 100%;
+      position: absolute;
+      left: 68%;
+      top: -90px;
+      opacity: 1;
     }
 
     &__img-snack {
-      top: auto;
       right: -150px;
       top: 50%;
-      width: auto;
       width: 400px;
     }
 
@@ -482,12 +509,6 @@ a.button {
     &__slogan {
       width: 800px;
     }
-    &__img-main {
-      img {
-        max-height: 1000px;
-        left: 65%;
-      }
-    }
     &__img-snack {
       width: 450px;
       top: 40%;
@@ -496,23 +517,11 @@ a.button {
         width: 100%;
       }
     }
-
-    &__featured {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-    }
   }
 }
 
 @media (min-width: 1600px) {
   .page-hero {
-    &__img-main {
-      img {
-        max-height: 1000px;
-        left: 57%;
-      }
-    }
     &__img-snack {
       width: 500px;
       top: 40%;
@@ -520,12 +529,6 @@ a.button {
       img {
         width: 100%;
       }
-    }
-
-    &__featured {
-      position: absolute;
-      bottom: 100px;
-      right: 100px;
     }
   }
 }
@@ -767,7 +770,6 @@ a.button {
 
   &__cta {
     text-align: center;
-    margin-top: 25px;
   }
 }
 
@@ -794,7 +796,6 @@ a.button {
 
     &__cta {
       text-align: center;
-      margin-top: 75px;
     }
   }
 }
@@ -850,10 +851,6 @@ a.button {
       margin: auto;
       width: 100%;
     }
-  }
-
-  &__cta {
-    margin-top: 30px;
   }
 
   &__list {

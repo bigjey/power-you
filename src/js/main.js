@@ -1,5 +1,5 @@
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {gsap} from "gsap";
+import {ScrollTrigger} from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -104,12 +104,14 @@ window.closeModal = closeModal;
 // features highlight
 var featuresElements = document.querySelectorAll(".promo-features__item");
 var FEATURES_HIGHLIGHT_INTERVAL = 5000;
+
 function setActiveFeature(index) {
   for (var el of featuresElements) {
     el.classList.remove("js-active");
   }
   featuresElements[index].classList.add("js-active");
 }
+
 if (featuresElements.length) {
   var activeFeatureIndex = 0;
   setActiveFeature(activeFeatureIndex);
@@ -147,9 +149,12 @@ window.addEventListener("load", (event) => {
     io.observe(container);
   });
 
-  setTimeout(function () {
-    document.getElementById("preloader").remove();
-  }, 2000);
+  if (!!document.getElementById("preloader")) {
+    setTimeout(function () {
+      document.getElementById("preloader").remove();
+    }, 2000);
+  }
+
 });
 
 // scroll animations
@@ -272,97 +277,97 @@ function initAnimations() {
           },
         });
 
-        showcaseTimeline.from("#showcase-1-1", { y: 200, duration: 1 }, 0);
-        showcaseTimeline.to("#showcase-1-1", { y: 200, duration: 1 }, 2);
+        showcaseTimeline.from("#showcase-1-1", {y: 200, duration: 1}, 0);
+        showcaseTimeline.to("#showcase-1-1", {y: 200, duration: 1}, 2);
 
-        showcaseTimeline.from("#showcase-1-2", { opacity: 0, duration: 1 }, 0);
-        showcaseTimeline.to("#showcase-1-2", { opacity: 0, duration: 1 }, 2);
+        showcaseTimeline.from("#showcase-1-2", {opacity: 0, duration: 1}, 0);
+        showcaseTimeline.to("#showcase-1-2", {opacity: 0, duration: 1}, 2);
 
-        showcaseTimeline.from("#showcase-1-3", { opacity: 0, duration: 1 }, 0);
-        showcaseTimeline.to("#showcase-1-3", { opacity: 0, duration: 1 }, 2);
+        showcaseTimeline.from("#showcase-1-3", {opacity: 0, duration: 1}, 0);
+        showcaseTimeline.to("#showcase-1-3", {opacity: 0, duration: 1}, 2);
 
-        showcaseTimeline.from("#showcase-1-4", { opacity: 0, duration: 1 }, 0);
-        showcaseTimeline.to("#showcase-1-4", { opacity: 0, duration: 1 }, 2);
+        showcaseTimeline.from("#showcase-1-4", {opacity: 0, duration: 1}, 0);
+        showcaseTimeline.to("#showcase-1-4", {opacity: 0, duration: 1}, 2);
 
         showcaseTimeline.from(
           "#showcase-1-4-1",
-          { y: 700, x: -100, duration: 0.5 },
+          {y: 700, x: -100, duration: 0.5},
           0
         );
 
         showcaseTimeline.from(
           "#showcase-1-4-2",
-          { y: 700, x: -100, duration: 0.2 },
+          {y: 700, x: -100, duration: 0.2},
           0 + 0.5
         );
 
         showcaseTimeline.from(
           "#showcase-1-4-3",
-          { y: 700, x: -350, duration: 0.5 },
+          {y: 700, x: -350, duration: 0.5},
           0 + 0.3
         );
 
         showcaseTimeline.from(
           "#showcase-1-4-4",
-          { y: 700, x: -350, duration: 0.2 },
+          {y: 700, x: -350, duration: 0.2},
           0 + 0.6
         );
 
         showcaseTimeline.to(
           "#showcase-1-4-1, #showcase-1-4-2",
-          { rotation: -90, y: 400, x: -200, duration: 0.5 },
+          {rotation: -90, y: 400, x: -200, duration: 0.5},
           1.9
         );
 
         showcaseTimeline.to(
           "#showcase-1-4-3, #showcase-1-4-4",
-          { rotation: 90, y: 400, x: 200, duration: 0.5 },
+          {rotation: 90, y: 400, x: 200, duration: 0.5},
           1.9
         );
 
         //
 
-        showcaseTimeline.from("#showcase-2-1", { y: 200, duration: 1 }, 2.5);
+        showcaseTimeline.from("#showcase-2-1", {y: 200, duration: 1}, 2.5);
 
-        showcaseTimeline.from("#showcase-2-2", { opacity: 0, duration: 1 }, 3);
+        showcaseTimeline.from("#showcase-2-2", {opacity: 0, duration: 1}, 3);
 
-        showcaseTimeline.from("#showcase-2-3", { opacity: 0, duration: 1 }, 3);
+        showcaseTimeline.from("#showcase-2-3", {opacity: 0, duration: 1}, 3);
 
-        showcaseTimeline.from("#showcase-2-4", { opacity: 0, duration: 1 }, 3);
+        showcaseTimeline.from("#showcase-2-4", {opacity: 0, duration: 1}, 3);
 
         showcaseTimeline.from(
           "#showcase-2-4-1",
-          { y: 700, x: -100, duration: 0.5 },
+          {y: 700, x: -100, duration: 0.5},
           3
         );
 
         showcaseTimeline.from(
           "#showcase-2-4-2",
-          { y: 700, x: -100, duration: 0.2 },
+          {y: 700, x: -100, duration: 0.2},
           3 + 0.5
         );
 
         showcaseTimeline.from(
           "#showcase-2-4-3",
-          { y: 700, x: -350, duration: 0.5 },
+          {y: 700, x: -350, duration: 0.5},
           3 + 0.3
         );
 
         showcaseTimeline.from(
           "#showcase-2-4-4",
-          { y: 700, x: -350, duration: 0.2 },
+          {y: 700, x: -350, duration: 0.2},
           3 + 0.6
         );
 
         showcaseTimeline.to(
           "#showcase-2-4-1, #showcase-2-4-2",
-          { rotation: -90, y: 400, x: -200, duration: 0.5 },
+          {rotation: -90, y: 400, x: -200, duration: 0.5},
           4 + 0.9
         );
 
         showcaseTimeline.to(
           "#showcase-2-4-3, #showcase-2-4-4",
-          { rotation: 90, y: 400, x: 200, duration: 0.5 },
+          {rotation: 90, y: 400, x: 200, duration: 0.5},
           4 + 0.9
         );
 

@@ -232,7 +232,7 @@ a.button {
   bottom: 0;
   right: 0;
   z-index: 100;
-  display: flex;
+  display: none;
   align-items: center;
   width: 100%;
   justify-content: center;
@@ -271,7 +271,10 @@ a.button {
   }
 }
 
-@media (min-width: $breakpoint-md) {
+@media (min-width: 1024px) {
+  .page-preloader {
+    display: flex;
+  }
   .js-loaded {
     .page-hero__img-main {
       transform: translate(-50%, 0);

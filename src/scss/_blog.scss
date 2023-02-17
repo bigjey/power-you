@@ -1,4 +1,4 @@
-.blog-title, .blog-content {
+.blog-title, .blog-content, .blog-pagination {
   .container {
     @media (min-width: 1200px) {
       max-width: 1312px;
@@ -63,7 +63,6 @@
       width: 100%;
       padding: 60px 0;
       border-top: 1px solid $color-grey-5;
-      border-bottom: 1px solid $color-grey-5;
       margin: 0 32px;
 
       ul {

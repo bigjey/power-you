@@ -1870,7 +1870,7 @@ html {
       width: calc((100% - (16px * 2))); } }
 
 @media (min-width: 1200px) {
-  .blog-title .container, .blog-content .container {
+  .blog-title .container, .blog-content .container, .blog-pagination .container {
     max-width: 1312px; } }
 
 .blog-title h1, .blog-title h2, .blog-title h3, .blog-title h4, .blog-title h5, .blog-title h6 {
@@ -1909,7 +1909,6 @@ html {
       width: 100%;
       padding: 60px 0;
       border-top: 1px solid #EAECF0;
-      border-bottom: 1px solid #EAECF0;
       margin: 0 32px; }
       .blog-content__content .cards ul {
         display: flex;
@@ -2203,6 +2202,41 @@ a.button {
     .button--secondary:before,
     a.button--secondary:before {
       background-color: #ffffff; }
+    .button--secondary._pagination,
+    a.button--secondary._pagination {
+      border: 1px solid #4F4F4F;
+      color: #4F4F4F;
+      min-width: initial;
+      padding: 10px 20px; }
+      .button--secondary._pagination span,
+      a.button--secondary._pagination span {
+        mix-blend-mode: initial;
+        padding: 0 0 0 23px;
+        position: relative; }
+        .button--secondary._pagination span:before,
+        a.button--secondary._pagination span:before {
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background-image: url("../img/arrow.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain; }
+      .button--secondary._pagination.next span,
+      a.button--secondary._pagination.next span {
+        padding: 0 23px 0 0; }
+        .button--secondary._pagination.next span:before,
+        a.button--secondary._pagination.next span:before {
+          left: initial;
+          right: 0;
+          transform: rotateY(180deg) translateY(-50%); }
+      .button--secondary._pagination:hover:before,
+      a.button--secondary._pagination:hover:before {
+        transform: initial; }
   .button--grey,
   a.button--grey {
     background-color: #0a0a0a;
@@ -3038,3 +3072,21 @@ body.js-show-modal {
     padding: 70px 0; }
     .you-count__text span {
       color: #e30517; }
+
+.blog-pagination__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0 0 0 336px;
+  border-top: 1px solid #EAECF0; }
+  .blog-pagination__content_numbers a {
+    font-size: 14px;
+    line-height: 20px;
+    border-radius: 8px; }
+    .blog-pagination__content_numbers a.active {
+      color: #E30517;
+      background-color: #FFF5F5; }
+  .blog-pagination__content_numbers a, .blog-pagination__content_numbers span {
+    color: #667085;
+    padding: 10px 16px; }

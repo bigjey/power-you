@@ -1922,17 +1922,19 @@ html {
           width: initial;
           flex: 0 1 100%;
           display: flex;
-          height: 304px;
           margin: 30px; }
           .blog-content__content .cards__card:nth-child(1) .cards__card_top, .blog-content__content .cards__card:nth-child(6n) .cards__card_top {
-            flex: 0 0 304px;
+            flex: 0 1 50%;
             margin: 0 32px 0 0;
-            height: initial; }
-          .blog-content__content .cards__card:nth-child(1) .cards__card_bottom > span, .blog-content__content .cards__card:nth-child(6n) .cards__card_bottom > span {
-            margin: 0 0 24px 0; }
-          .blog-content__content .cards__card:nth-child(1) .cards__card_bottom p, .blog-content__content .cards__card:nth-child(6n) .cards__card_bottom p {
-            -webkit-line-clamp: 2;
-            line-clamp: 2; }
+            height: 100%;
+            max-height: 316px; }
+          .blog-content__content .cards__card:nth-child(1) .cards__card_bottom, .blog-content__content .cards__card:nth-child(6n) .cards__card_bottom {
+            flex: 0 1 50%; }
+            .blog-content__content .cards__card:nth-child(1) .cards__card_bottom > span, .blog-content__content .cards__card:nth-child(6n) .cards__card_bottom > span {
+              margin: 0 0 24px 0; }
+            .blog-content__content .cards__card:nth-child(1) .cards__card_bottom p, .blog-content__content .cards__card:nth-child(6n) .cards__card_bottom p {
+              -webkit-line-clamp: 2;
+              line-clamp: 2; }
         .blog-content__content .cards__card_top {
           height: 210px; }
           .blog-content__content .cards__card_top img {
@@ -1941,6 +1943,7 @@ html {
             object-fit: cover; }
         .blog-content__content .cards__card_bottom > span {
           display: inline-block;
+          text-align: center;
           border-radius: 16px;
           padding: 6px 12px 6px 4px;
           background-color: #FFF5F5;
@@ -2004,6 +2007,8 @@ html {
               color: #667085;
               font-size: 14px;
               line-height: 27px; }
+            .blog-content__content .join__content .input-container input:focus-visible {
+              outline: 1px solid #0a0a0a; }
         .blog-content__content .join__content button {
           margin: 40px 0 0 0;
           display: block;
@@ -2184,7 +2189,8 @@ a.button {
     width: calc(100% + 10px);
     height: calc(100% + 10px);
     position: absolute;
-    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1); }
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+    border-radius: 20px; }
   .button:hover:before,
   a.button:hover:before {
     transform: translate3d(0, -100%, 0); }

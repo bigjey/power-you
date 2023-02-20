@@ -169,6 +169,7 @@ a.button {
     height: calc(100% + 10px);
     position: absolute;
     transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+    border-radius: 20px;
   }
 
   &:hover:before {

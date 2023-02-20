@@ -167,6 +167,48 @@
       }
     }
 
+    .pagination-mob {
+      display: none;
+      justify-content: space-between;
+      margin: 12px 0 60px;
+      align-items: center;
+
+      span {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 1px solid $color-black;
+
+        &:before {
+          content: '';
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          left: 50%;
+          top: 50%;
+          transform: translateY(-50%) translateX(-50%);
+          background-image: url("../img/arrow-blog.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+
+        &:nth-of-type(1) {
+          &:before{
+            transform: translateY(-50%) translateX(-50%) rotate(180deg);
+          }
+        }
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 20px;
+        color: #344054;
+        font-weight: 400;
+      }
+    }
+
     .join {
       flex: 0 0 304px;
 
@@ -215,6 +257,94 @@
           margin: 40px 0 0 0;
           display: block;
           width: 100%;
+        }
+      }
+    }
+  }
+
+  @media(max-width: 1199px) {
+    .blog-content {
+      &__content {
+        flex-direction: column;
+
+        .cards {
+          margin: 0;
+
+          &__card {
+            &:nth-child(1), &:nth-child(6n) {
+              flex: initial;
+              display: initial;
+              width: calc((100% - (30px * 4)) / 2);
+              margin: 30px;
+
+              .cards {
+                &__card {
+                  &_top {
+                    flex: initial;
+                    height: 210px;
+                    max-height: initial;
+                    margin: initial;
+                  }
+
+                  &_bottom {
+                    flex: initial;
+
+                    > span {
+                      margin: 32px 0 16px;
+                    }
+                  }
+                }
+              }
+            }
+
+          }
+        }
+
+        .join{
+          &__content{
+            position: static;
+          }
+        }
+
+        &_navbar {
+          display: none;
+        }
+
+        .pagination-mob {
+          display: flex;
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .blog-content {
+      &__content {
+        .cards {
+
+          ul {
+            margin: 0;
+          }
+
+          &__card {
+            width: 100%;
+            margin: 0 0 30px 0;
+
+            &:last-child {
+              margin: 0;
+            }
+
+            &:nth-child(1), &:nth-child(6n) {
+              margin: 0 0 30px 0;
+              width: 100%;
+
+            }
+
+          }
+        }
+        .join{
+          &__content{
+            padding: 24px;
+          }
         }
       }
     }

@@ -1532,4 +1532,7 @@ body.js-show-modal {
       }
     }
   }
+  @media (max-width: 1199px) {
+    display: none;
+  }
 }

@@ -41,9 +41,18 @@
           padding: 10px 14px;
           font-size: 16px;
           line-height: 31px;
+          cursor: pointer;
+          @media (min-width: 1200px) {
+            &:hover{
+              a{
+                color: $color-black;
+              }
+            }
+          }
 
           a {
             color: $color-grey-4;
+            transition: 500ms;
           }
 
           &.active {

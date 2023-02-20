@@ -1896,9 +1896,14 @@ html {
         .blog-content__content_navbar ul li {
           padding: 10px 14px;
           font-size: 16px;
-          line-height: 31px; }
+          line-height: 31px;
+          cursor: pointer; }
+          @media (min-width: 1200px) {
+            .blog-content__content_navbar ul li:hover a {
+              color: #0a0a0a; } }
           .blog-content__content_navbar ul li a {
-            color: #667085; }
+            color: #667085;
+            transition: 500ms; }
           .blog-content__content_navbar ul li.active {
             border-radius: 6px;
             background-color: #f5f5f5;

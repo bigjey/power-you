@@ -2095,6 +2095,11 @@ html {
               line-height: 27px; }
             .blog-content__content .join__content .input-container input:focus-visible {
               outline: 1px solid #0a0a0a; }
+              .blog-content__content .join__content .input-container input:focus-visible:invalid {
+                outline: 1px solid #E30517 !important;
+                color: #E30517 !important; }
+                .blog-content__content .join__content .input-container input:focus-visible:invalid::placeholder {
+                  color: rgba(227, 5, 23, 0.3) !important; }
         .blog-content__content .join__content button {
           margin: 40px 0 0 0;
           display: block;

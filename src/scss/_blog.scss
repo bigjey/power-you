@@ -321,7 +321,16 @@
 
             &:focus-visible {
               outline: 1px solid $color-black;
+              &:invalid {
+                outline: 1px solid $color-red !important;
+                color: $color-red !important;
+
+                &::placeholder {
+                  color: rgba($color-red, 0.3) !important;
+                }
+              }
             }
+
           }
         }
 

@@ -1900,7 +1900,7 @@ html {
           cursor: pointer; }
           @media (min-width: 1200px) {
             .blog-content__content_navbar ul li:hover a {
-              color: #0a0a0a; } }
+              color: #E30517; } }
           .blog-content__content_navbar ul li a {
             color: #667085;
             transition: 500ms; }
@@ -2355,7 +2355,8 @@ a.button {
       a.button--secondary._pagination span {
         mix-blend-mode: initial;
         padding: 0 0 0 23px;
-        position: relative; }
+        position: relative;
+        transition: 500ms; }
         .button--secondary._pagination span:before,
         a.button--secondary._pagination span:before {
           content: '';
@@ -2377,9 +2378,6 @@ a.button {
           left: initial;
           right: 0;
           transform: rotateY(180deg) translateY(-50%); }
-      .button--secondary._pagination:hover:before,
-      a.button--secondary._pagination:hover:before {
-        transform: initial; }
   .button--grey,
   a.button--grey {
     background-color: #0a0a0a;

@@ -5,6 +5,7 @@
 @import "animations";
 @import "editor";
 @import "blog";
+@import "article";
 
 * {
   padding: 0;
@@ -1532,7 +1533,78 @@ body.js-show-modal {
       }
     }
   }
+
   @media (max-width: 1199px) {
     display: none;
   }
 }
+
+.spots {
+  display: inline-block;
+  text-align: center;
+  border-radius: 16px;
+  padding: 6px 12px 6px 4px;
+  background-color: #FFF5F5;
+  color: $color-red;
+  font-size: 14px;
+  line-height: 20px;
+
+  small {
+    background-color: #fff;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 700;
+    padding: 0 12px;
+    border-radius: 16px;
+    margin: 0 12px 0 0;
+  }
+}
+
+.navbar-blog {
+
+  > p {
+    strong {
+      font-size: 24px;
+      line-height: 32px;
+      font-family: "DM Serif Display";
+      font-weight: 400;
+      color: #E30517;
+      text-transform: uppercase;
+    }
+  }
+
+  ul {
+    margin: 20px 0 0 0;
+    list-style: none;
+
+    li {
+      padding: 10px 14px;
+      font-size: 16px;
+      line-height: 31px;
+      cursor: pointer;
+      @media (min-width: 1200px) {
+        &:hover {
+          a {
+            color: $color-red;
+          }
+        }
+      }
+
+      a {
+        color: $color-grey-4;
+        transition: 500ms;
+      }
+
+      &.active {
+        border-radius: 6px;
+        background-color: $color-grey-2;
+        font-weight: 700;
+
+        a {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}
+

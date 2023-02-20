@@ -1,4 +1,4 @@
-.blog-title, .blog-content, .blog-pagination {
+.blog-title, .blog-content, .blog-pagination, .blog-article {
   .container {
     @media (min-width: 1200px) {
       max-width: 1312px;
@@ -9,6 +9,42 @@
 .blog-title {
   h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
+  }
+
+  &.article {
+    h1, h2, h3, h4, h5, h6 {
+      text-transform: initial;
+    }
+
+    @media (max-width: 1023px) {
+      h1 {
+        font-size: 40px;
+        line-height: 44px;
+        font-weight: 400;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .spots {
+    margin: 0 0 16px 0;
+  }
+
+  &__picture {
+    margin: 36px 0 0 0;
+    height: 392px;
+    width: 100%;
+    @media (max-width: 1023px) {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 }
 
@@ -29,44 +65,6 @@
 
   &__content {
     display: flex;
-
-    &_navbar {
-      flex: 0 0 304px;
-
-      ul {
-        margin: 20px 0 0 0;
-        list-style: none;
-
-        li {
-          padding: 10px 14px;
-          font-size: 16px;
-          line-height: 31px;
-          cursor: pointer;
-          @media (min-width: 1200px) {
-            &:hover{
-              a{
-                color: $color-red;
-              }
-            }
-          }
-
-          a {
-            color: $color-grey-4;
-            transition: 500ms;
-          }
-
-          &.active {
-            border-radius: 6px;
-            background-color: $color-grey-2;
-            font-weight: 700;
-
-            a {
-              color: $color-black;
-            }
-          }
-        }
-      }
-    }
 
     .cards {
       width: 100%;
@@ -128,25 +126,7 @@
 
         &_bottom {
           > span {
-            display: inline-block;
-            text-align: center;
-            border-radius: 16px;
-            padding: 6px 12px 6px 4px;
-            background-color: #FFF5F5;
-            color: $color-red;
-            font-size: 14px;
-            line-height: 20px;
             margin: 32px 0 16px;
-
-            small {
-              background-color: #fff;
-              font-size: 14px;
-              line-height: 24px;
-              font-weight: 700;
-              padding: 0 12px;
-              border-radius: 16px;
-              margin: 0 12px 0 0;
-            }
           }
 
           h4 {
@@ -174,6 +154,10 @@
           }
         }
       }
+    }
+
+    .navbar-blog{
+      flex: 0 0 304px;
     }
 
     .sort-select {
@@ -276,7 +260,7 @@
         }
 
         &:nth-of-type(1) {
-          &:before{
+          &:before {
             transform: translateY(-50%) translateX(-50%) rotate(180deg);
           }
         }
@@ -330,6 +314,7 @@
 
             &:focus-visible {
               outline: 1px solid $color-black;
+
               &:invalid {
                 outline: 1px solid $color-red !important;
                 color: $color-red !important;
@@ -390,17 +375,17 @@
           }
         }
 
-        .join{
-          &__content{
+        .join {
+          &__content {
             position: static;
           }
         }
 
-        .sort-select{
+        .sort-select {
           display: flex;
         }
 
-        &_navbar {
+        .navbar-blog {
           display: none;
         }
 
@@ -435,8 +420,9 @@
 
           }
         }
-        .join{
-          &__content{
+
+        .join {
+          &__content {
             padding: 24px;
           }
         }

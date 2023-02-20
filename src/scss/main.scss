@@ -163,17 +163,19 @@ a.button {
 
   &:before {
     content: "";
-    top: -5px;
-    left: -5px;
-    width: calc(100% + 10px);
-    height: calc(100% + 10px);
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
     position: absolute;
-    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-    border-radius: 20px;
+    transition: top 0.2s cubic-bezier(0.7, 0, 0.2, 1);
+    border-radius: 19px;
   }
 
-  &:hover:before {
-    transform: translate3d(0, -100%, 0);
+  @media (min-width: 1200px) {
+    &:hover:before {
+      top: -110%;
+    }
   }
 
   &--primary {

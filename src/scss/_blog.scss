@@ -167,10 +167,82 @@
       }
     }
 
-    .pagination-mob {
+    .sort-select {
+      position: relative;
+      flex-direction: column;
       display: none;
       justify-content: space-between;
-      margin: 12px 0 60px;
+      align-items: center;
+      width: 100%;
+      max-width: 313px;
+      min-height: 44px;
+      margin: 24px 0;
+      border: 1px solid #D0D5DD;
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: 8px;
+      padding: 10px 14px;
+
+      &.turn-arrow {
+        &:before {
+          transition: 300ms;
+          transform: translateY(-50%) rotateX(180deg);
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        right: 20px;
+        top: 20px;
+        width: 12px;
+        height: 8px;
+        background-image: url("../img/arrow-sort.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: 300ms;
+      }
+
+      span {
+        width: 100%;
+        font-size: 12px;
+        line-height: 24px;
+        font-weight: 700;
+        color: $color-grey-6;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      ul {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: 300ms;
+
+        li {
+          font-size: 12px;
+          line-height: 14px;
+          font-weight: 700;
+          color: $color-grey-6;
+          text-transform: uppercase;
+          margin: 10px 0 0 0;
+
+          a {
+            color: $color-grey-6
+          }
+        }
+      }
+    }
+
+    .pagination-mob {
+      border-top: 1px solid $color-grey-5;
+      display: none;
+      justify-content: space-between;
+      margin: 48px 0 60px;
+      padding: 12px 0 0 0;
       align-items: center;
 
       span {
@@ -304,6 +376,10 @@
           &__content{
             position: static;
           }
+        }
+
+        .sort-select{
+          display: flex;
         }
 
         &_navbar {

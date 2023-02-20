@@ -1979,10 +1979,66 @@ html {
           -webkit-line-clamp: 4;
           line-clamp: 4;
           -webkit-box-orient: vertical; }
-    .blog-content__content .pagination-mob {
+    .blog-content__content .sort-select {
+      position: relative;
+      flex-direction: column;
       display: none;
       justify-content: space-between;
-      margin: 12px 0 60px;
+      align-items: center;
+      width: 100%;
+      max-width: 313px;
+      min-height: 44px;
+      margin: 24px 0;
+      border: 1px solid #D0D5DD;
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: 8px;
+      padding: 10px 14px; }
+      .blog-content__content .sort-select.turn-arrow:before {
+        transition: 300ms;
+        transform: translateY(-50%) rotateX(180deg); }
+      .blog-content__content .sort-select:before {
+        content: '';
+        position: absolute;
+        pointer-events: none;
+        right: 20px;
+        top: 20px;
+        width: 12px;
+        height: 8px;
+        background-image: url("../img/arrow-sort.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        transition: 300ms; }
+      .blog-content__content .sort-select span {
+        width: 100%;
+        font-size: 12px;
+        line-height: 24px;
+        font-weight: 700;
+        color: #4F4F4F;
+        text-transform: uppercase;
+        cursor: pointer; }
+      .blog-content__content .sort-select ul {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: 300ms; }
+        .blog-content__content .sort-select ul li {
+          font-size: 12px;
+          line-height: 14px;
+          font-weight: 700;
+          color: #4F4F4F;
+          text-transform: uppercase;
+          margin: 10px 0 0 0; }
+          .blog-content__content .sort-select ul li a {
+            color: #4F4F4F; }
+    .blog-content__content .pagination-mob {
+      border-top: 1px solid #EAECF0;
+      display: none;
+      justify-content: space-between;
+      margin: 48px 0 60px;
+      padding: 12px 0 0 0;
       align-items: center; }
       .blog-content__content .pagination-mob span {
         position: relative;
@@ -2064,6 +2120,8 @@ html {
               margin: 32px 0 16px; }
       .blog-content .blog-content__content .join__content {
         position: static; }
+      .blog-content .blog-content__content .sort-select {
+        display: flex; }
       .blog-content .blog-content__content_navbar {
         display: none; }
       .blog-content .blog-content__content .pagination-mob {

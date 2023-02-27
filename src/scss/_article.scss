@@ -122,7 +122,17 @@
         .wp-block-video {
           margin: 40px 0;
 
-          video, iframe {
+          video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .wp-block-embed-youtube{
+          margin: 40px 0;
+
+          iframe {
             width: 100%;
             height: 100%;
             object-fit: contain;

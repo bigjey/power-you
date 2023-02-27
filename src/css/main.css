@@ -2226,7 +2226,13 @@ html {
             margin: 0; }
       .blog-article__content .editor-blog__content .wp-block-video {
         margin: 40px 0; }
-        .blog-article__content .editor-blog__content .wp-block-video video, .blog-article__content .editor-blog__content .wp-block-video iframe {
+        .blog-article__content .editor-blog__content .wp-block-video video {
+          width: 100%;
+          height: 100%;
+          object-fit: contain; }
+      .blog-article__content .editor-blog__content .wp-block-embed-youtube {
+        margin: 40px 0; }
+        .blog-article__content .editor-blog__content .wp-block-embed-youtube iframe {
           width: 100%;
           height: 100%;
           object-fit: contain; }

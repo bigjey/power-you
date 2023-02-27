@@ -456,7 +456,7 @@ const refreshScrollTrigger = debounce(function () {
 
 window.addEventListener("resize", refreshScrollTrigger);
 
-let dropMenu = () => {
+const dropMenu = () => {
   let blockSort = document.getElementById("sort");
   if (!!blockSort) {
     let blockList = document.getElementById("sort-list");
@@ -517,7 +517,55 @@ let dropMenu = () => {
   }
 };
 
+const setTitleTags = () => {
+  const titles = document.querySelectorAll('.editor-blog__content>h2');
+  const navbarContainer = document.querySelector('.navbar-blog>ul');
+  if (titles.length > 0) {
+    for (let i = 0; i < titles.length; i++) {
+      let id = `article${i + 1}`;
+      titles[i].setAttribute("id", id)
+      let titleOfElement = titles[i].innerHTML;
+      let newElement = document.createElement('li');
+      i === 0 && newElement.classList.add('active');
+      newElement.innerHTML = `<a href="#${id}">${titleOfElement}</a>`;
+      navbarContainer.append(newElement)
+    }
+  }
+}
+
+const scrollAnchors = () => {
+  const yOffset = -20;
+  const anchors = document.querySelectorAll('a[href*="#"]');
+  if (anchors.length > 0) {
+    for (let anchor of anchors) {
+      anchor.addEventListener('click', function (e) {
+        if (anchor.getAttribute('href').charAt(0) === '#') {
+          e.preventDefault()
+          const blockID = anchor.getAttribute('href').substring(1);
+          const obj = document.getElementById(blockID);
+          const y = obj.getBoundingClientRect().top + window.scrollY + yOffset;
+          window.scrollTo({top: y, behavior: 'smooth'});
+        }
+      })
+    }
+  }
+};
+
+const navbarActive = () => {
+  const anchors = document.querySelectorAll('.navbar-blog>ul>li');
+  console.log(anchors)
+  anchors.forEach(anchor => {
+    anchor.onclick = () => {
+      document.querySelector('.navbar-blog>ul>.active').classList.remove('active');
+      anchor.classList.add('active');
+    }
+  })
+}
+
+setTitleTags()
 dropMenu()
+scrollAnchors()
+navbarActive()
 
 
 

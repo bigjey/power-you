@@ -553,7 +553,6 @@ const scrollAnchors = () => {
 
 const navbarActive = () => {
   const anchors = document.querySelectorAll('.navbar-blog>ul>li');
-  console.log(anchors)
   anchors.forEach(anchor => {
     anchor.onclick = () => {
       document.querySelector('.navbar-blog>ul>.active').classList.remove('active');

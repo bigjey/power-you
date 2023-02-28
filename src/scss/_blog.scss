@@ -288,9 +288,10 @@
         form {
           > p {
             > input {
+              margin: 40px 0 0 0;
               display: inline-block;
               width: 100%;
-              border: 1px solid $color-black;
+              background-color: $color-black;
               padding: 15px;
               min-width: 170px;
               text-align: center;
@@ -310,6 +311,19 @@
           .input-container {
             display: block;
             margin: 0 0 16px 0;
+
+            .wpcf7-not-valid-tip{
+              color: $color-red!important;
+            }
+
+            .wpcf7-spinner{
+              display: block!important;
+              margin: 10px auto!important;
+            }
+
+            .wpcf7-response-output{
+              border-color: $color-red;
+            }
 
             &:last-of-type {
               margin: 0;

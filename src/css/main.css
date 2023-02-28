@@ -2070,9 +2070,10 @@ html {
         max-height: 100%;
         border-radius: 6px; }
         .blog-content__content .join .wpcf7 form > p > input {
+          margin: 40px 0 0 0;
           display: inline-block;
           width: 100%;
-          border: 1px solid #0a0a0a;
+          background-color: #0a0a0a;
           padding: 15px;
           min-width: 170px;
           text-align: center;
@@ -2087,6 +2088,13 @@ html {
         .blog-content__content .join .wpcf7 form .input-container {
           display: block;
           margin: 0 0 16px 0; }
+          .blog-content__content .join .wpcf7 form .input-container .wpcf7-not-valid-tip {
+            color: #E30517 !important; }
+          .blog-content__content .join .wpcf7 form .input-container .wpcf7-spinner {
+            display: block !important;
+            margin: 10px auto !important; }
+          .blog-content__content .join .wpcf7 form .input-container .wpcf7-response-output {
+            border-color: #E30517; }
           .blog-content__content .join .wpcf7 form .input-container:last-of-type {
             margin: 0; }
           .blog-content__content .join .wpcf7 form .input-container input {

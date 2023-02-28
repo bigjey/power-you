@@ -2031,35 +2031,35 @@ html {
     .blog-content__content .pagination-mob {
       border-top: 1px solid #EAECF0;
       display: none;
-      justify-content: space-between;
       margin: 48px 0 60px;
       padding: 12px 0 0 0;
       align-items: center; }
-      .blog-content__content .pagination-mob span {
+      .blog-content__content .pagination-mob a {
         position: relative;
         width: 36px;
         height: 36px;
         border-radius: 50%;
         border: 1px solid #0a0a0a; }
-        .blog-content__content .pagination-mob span:before {
+        .blog-content__content .pagination-mob a:before {
           content: '';
           position: absolute;
           width: 20px;
           height: 20px;
           left: 50%;
           top: 50%;
-          transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%) rotate(180deg);
           background-image: url("../img/arrow-blog.svg");
           background-repeat: no-repeat;
           background-position: center;
           background-size: contain; }
-        .blog-content__content .pagination-mob span:nth-of-type(1):before {
-          transform: translateY(-50%) translateX(-50%) rotate(180deg); }
       .blog-content__content .pagination-mob p {
         font-size: 14px;
         line-height: 20px;
         color: #344054;
-        font-weight: 400; }
+        font-weight: 400;
+        margin: 0 auto; }
+      .blog-content__content .pagination-mob p + a:before {
+        transform: translateY(-50%) translateX(-50%); }
     .blog-content__content .join {
       flex: 0 0 304px; }
       .blog-content__content .join .wpcf7 {
@@ -2070,10 +2070,12 @@ html {
         max-height: 100%;
         border-radius: 6px; }
         .blog-content__content .join .wpcf7 form > p > input {
+          cursor: pointer;
           margin: 40px 0 0 0;
           display: inline-block;
           width: 100%;
           background-color: #0a0a0a;
+          border: 1px solid #0a0a0a !important;
           padding: 15px;
           min-width: 170px;
           text-align: center;
@@ -2088,17 +2090,9 @@ html {
         .blog-content__content .join .wpcf7 form .input-container {
           display: block;
           margin: 0 0 16px 0; }
-          .blog-content__content .join .wpcf7 form .input-container .wpcf7-not-valid-tip {
-            color: #E30517 !important; }
-          .blog-content__content .join .wpcf7 form .input-container .wpcf7-spinner {
-            display: block !important;
-            margin: 10px auto !important; }
-          .blog-content__content .join .wpcf7 form .input-container .wpcf7-response-output {
-            border-color: #E30517; }
           .blog-content__content .join .wpcf7 form .input-container:last-of-type {
             margin: 0; }
           .blog-content__content .join .wpcf7 form .input-container input {
-            cursor: pointer;
             border-radius: 20px;
             border: 1px solid #d7d7d7;
             background: transparent;
@@ -2111,6 +2105,13 @@ html {
               line-height: 27px; }
             .blog-content__content .join .wpcf7 form .input-container input:focus-visible {
               outline: 1px solid #0a0a0a; }
+        .blog-content__content .join .wpcf7 form .wpcf7-not-valid-tip {
+          color: #E30517 !important; }
+        .blog-content__content .join .wpcf7 form .wpcf7-spinner {
+          display: block !important;
+          margin: 10px auto !important; }
+        .blog-content__content .join .wpcf7 form .wpcf7-response-output {
+          border-color: #E30517; }
       .blog-content__content .join__content {
         position: sticky;
         top: 50px;
@@ -2587,14 +2588,6 @@ a.button {
           background-repeat: no-repeat;
           background-position: center;
           background-size: contain; }
-      .button--secondary._pagination.next span,
-      a.button--secondary._pagination.next span {
-        padding: 0 23px 0 0; }
-        .button--secondary._pagination.next span:before,
-        a.button--secondary._pagination.next span:before {
-          left: initial;
-          right: 0;
-          transform: rotateY(180deg) translateY(-50%); }
   .button--grey,
   a.button--grey {
     background-color: #0a0a0a;
@@ -3433,21 +3426,30 @@ body.js-show-modal {
 
 .blog-pagination__content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 20px 0;
   margin: 0 0 0 336px;
   border-top: 1px solid #EAECF0; }
-  .blog-pagination__content_numbers a {
-    font-size: 14px;
-    line-height: 20px;
-    border-radius: 8px; }
+  .blog-pagination__content_numbers {
+    margin: 0 auto; }
     .blog-pagination__content_numbers a.active {
       color: #E30517;
       background-color: #FFF5F5; }
-  .blog-pagination__content_numbers a, .blog-pagination__content_numbers span {
-    color: #667085;
-    padding: 10px 16px; }
+    .blog-pagination__content_numbers .current {
+      color: #E30517;
+      background-color: #FFF5F5; }
+    .blog-pagination__content_numbers a, .blog-pagination__content_numbers span {
+      font-size: 14px;
+      line-height: 20px;
+      border-radius: 8px;
+      color: #667085;
+      padding: 10px 16px; }
+  .blog-pagination__content > div + a span {
+    padding: 0 23px 0 0 !important; }
+    .blog-pagination__content > div + a span:before {
+      left: initial !important;
+      right: 0 !important;
+      transform: rotateY(180deg) translateY(-50%) !important; }
 
 @media (max-width: 1199px) {
   .blog-pagination {

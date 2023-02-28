@@ -233,12 +233,11 @@
     .pagination-mob {
       border-top: 1px solid $color-grey-5;
       display: none;
-      justify-content: space-between;
       margin: 48px 0 60px;
       padding: 12px 0 0 0;
       align-items: center;
 
-      span {
+      a {
         position: relative;
         width: 36px;
         height: 36px;
@@ -252,17 +251,11 @@
           height: 20px;
           left: 50%;
           top: 50%;
-          transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%) rotate(180deg);
           background-image: url("../img/arrow-blog.svg");
           background-repeat: no-repeat;
           background-position: center;
           background-size: contain;
-        }
-
-        &:nth-of-type(1) {
-          &:before {
-            transform: translateY(-50%) translateX(-50%) rotate(180deg);
-          }
         }
       }
 
@@ -271,6 +264,13 @@
         line-height: 20px;
         color: #344054;
         font-weight: 400;
+        margin: 0 auto;
+      }
+
+      p + a{
+        &:before {
+          transform: translateY(-50%) translateX(-50%);
+        }
       }
     }
 
@@ -288,10 +288,12 @@
         form {
           > p {
             > input {
+              cursor: pointer;
               margin: 40px 0 0 0;
               display: inline-block;
               width: 100%;
               background-color: $color-black;
+              border: 1px solid $color-black!important;
               padding: 15px;
               min-width: 170px;
               text-align: center;
@@ -312,25 +314,12 @@
             display: block;
             margin: 0 0 16px 0;
 
-            .wpcf7-not-valid-tip{
-              color: $color-red!important;
-            }
-
-            .wpcf7-spinner{
-              display: block!important;
-              margin: 10px auto!important;
-            }
-
-            .wpcf7-response-output{
-              border-color: $color-red;
-            }
 
             &:last-of-type {
               margin: 0;
             }
 
             input {
-              cursor: pointer;
               border-radius: 20px;
               border: 1px solid $color-grey-1;
               background: transparent;
@@ -349,6 +338,19 @@
               }
 
             }
+          }
+
+          .wpcf7-not-valid-tip{
+            color: $color-red!important;
+          }
+
+          .wpcf7-spinner{
+            display: block!important;
+            margin: 10px auto!important;
+          }
+
+          .wpcf7-response-output{
+            border-color: $color-red;
           }
         }
       }

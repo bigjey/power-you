@@ -2098,6 +2098,7 @@ html {
           .blog-content__content .join .wpcf7 form .input-container:last-of-type {
             margin: 0; }
           .blog-content__content .join .wpcf7 form .input-container input {
+            cursor: pointer;
             border-radius: 20px;
             border: 1px solid #d7d7d7;
             background: transparent;

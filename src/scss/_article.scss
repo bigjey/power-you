@@ -24,6 +24,8 @@
         border-top: 1px solid #EAECF0;
 
         p, a {
+          cursor: pointer;
+
           &:nth-child(1) {
             font-family: 'DM Serif Display';
             font-size: 18px;
@@ -54,6 +56,26 @@
               background-repeat: no-repeat;
               background-position: center;
               background-size: cover;
+            }
+
+            &:after {
+              content: 'copied';
+              position: absolute;
+              top: -30px;
+              left: 50%;
+              transform: translateX(-50%);
+              transition: 300ms;
+              color: $color-grey-2;
+              background-color: $color-grey-6;
+              padding: 3px 8px;
+              border-radius: 10px;
+              opacity: 0;
+            }
+
+            &.active {
+              &:after {
+                opacity: 0.5;
+              }
             }
           }
         }
@@ -129,7 +151,7 @@
           }
         }
 
-        .wp-block-embed-youtube{
+        .wp-block-embed-youtube {
           margin: 40px 0;
 
           iframe {

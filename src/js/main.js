@@ -552,6 +552,18 @@ const scrollAnchors = () => {
   }
 };
 
+const copyBtn = document.querySelector('.editor-blog__links>p>span');
+
+const copyBlogLink = () => {
+  navigator.clipboard.writeText(window.location.href);
+  copyBtn.parentNode.classList.add('active');
+  setTimeout(() => {
+    copyBtn.parentNode.classList.remove('active');
+  }, 1000);
+}
+
+copyBtn.addEventListener('click', copyBlogLink);
+
 setTitleTags()
 dropMenu()
 scrollAnchors()

@@ -351,6 +351,9 @@
 
           .wpcf7-response-output{
             border-color: $color-red;
+            color: $color-red!important;
+            font-size: 16px;
+            line-height: 18px;
           }
         }
       }

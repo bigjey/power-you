@@ -552,13 +552,13 @@ const scrollAnchors = () => {
   }
 };
 
-const copyBtn = document.querySelector('.editor-blog__links>p>span');
+const copyBtn = document.querySelector('.btn-copy');
 
 const copyBlogLink = () => {
   navigator.clipboard.writeText(window.location.href);
-  copyBtn.parentNode.classList.add('active');
+  copyBtn.classList.add('active');
   setTimeout(() => {
-    copyBtn.parentNode.classList.remove('active');
+    copyBtn.classList.remove('active');
   }, 1000);
 }
 

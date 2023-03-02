@@ -2076,13 +2076,13 @@ html {
           width: 100%;
           background-color: #0a0a0a;
           border: 1px solid #0a0a0a !important;
-          padding: 15px;
+          padding: 0 15px;
           min-width: 170px;
           text-align: center;
           font-size: 14px;
-          line-height: 1.7;
+          line-height: 55px;
           font-weight: bold;
-          border-radius: 20px;
+          border-radius: 20px !important;
           color: #ffffff; }
         .blog-content__content .join .wpcf7 form > p:first-of-type {
           text-align: center;

@@ -541,7 +541,6 @@ const scrollAnchors = () => {
       anchor.addEventListener('click', function (e) {
         if (anchor.getAttribute('href').charAt(0) === '#') {
           e.preventDefault()
-          console.log(e.target)
           const blockID = anchor.getAttribute('href').substring(1);
           const obj = document.getElementById(blockID);
           const y = obj.getBoundingClientRect().top + window.scrollY + yOffset;
@@ -551,6 +550,18 @@ const scrollAnchors = () => {
     }
   }
 };
+
+const navbarActive = () => {
+  const anchors = document.querySelectorAll('.navbar-blog>ul>li');
+  if (anchors.length > 0) {
+    anchors.forEach(anchor => {
+      anchor.onclick = () => {
+        document.querySelector('.navbar-blog>ul>.active').classList.remove('active');
+        anchor.classList.add('active');
+      }
+    })
+  }
+}
 
 const copyBtn = document.querySelector('.btn-copy');
 
@@ -569,6 +580,7 @@ if (copyBtn) {
 setTitleTags()
 dropMenu()
 scrollAnchors()
+navbarActive()
 
 
 
